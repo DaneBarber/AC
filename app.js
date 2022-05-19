@@ -1,6 +1,7 @@
 const hero = {
   level: 1,
   health: 100,
+  legos: 0
 }
 
 const superHero = {
@@ -20,18 +21,21 @@ function attackBoss() {
   boss.health -= 5
   if (boss.health <= 0) {
     boss.health = 0,
-      console.log("boss is ded! Level UP!!!"),
+      hero.legos += 100 * boss.level,
+      // console.log("boss is ded! Level UP!!!"),
       boss.level += 1,
       boss.attack *= 2,
       boss.health = gameHealth * boss.level
 
   }
+
   let maxHealth = (gameHealth * boss.level)
   console.log(maxHealth, 'max Health')
   let displayHealth = (boss.health / maxHealth) * 100
   console.log(displayHealth, "display health")
   console.log(boss.health, "boss health")
   document.getElementById("progress-boss").style.width = displayHealth.toString() + "%"
+  document.getElementById("heroLegos").innerText = hero.legos.toString()
 
 }
 
@@ -46,9 +50,14 @@ function bossAttack() {
   document.getElementById("progress-hero").style.width = hero.health.toString() + "%"
 }
 
+function shop() {
+
+}
+
 function gameReset() {
   hero.health = 100,
     boss.health = 100,
+    hero.legos = 0,
     hero.level = 1,
     boss.level = 1,
     document.getElementById("progress-hero").style.width = hero.health.toString() + "%",
