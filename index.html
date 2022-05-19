@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>SlapFight</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,8 +16,32 @@
 </head>
 
 <body>
-  <header class="container-fluid">SlapFight</header>
+  <header class="container-fluid bg-dark">
+    <div class="text-light">
+      <h2>SlapFight</h2>
+    </div>
+  </header>
   <main class="container-fluid">
+    <div class="row">
+      <div class="col-6 bg-warning text-dark" height="50px" id="hero">
+        <h3>Hero</h3>
+        <img class="img-fluid"
+          src="https://images.unsplash.com/photo-1613834926943-9e4ac2945744?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070"
+          onclick="bossAttack()" alt="">
+        <div class="progress">
+          <div class="progress-bar" id="progress-hero" role="progressbar" style="width: 100%" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div class="col-6 bg-danger text-dark" height="50px" id="boss">
+        <h3>Boss</h3>
+        <img class="img-fluid" src="images/Screen Shot 2022-05-19 at 1.57.10 PM.png" onclick="attackBoss()" alt="">
+        <div class="progress">
+          <div class="progress-bar" id="progress-boss" role="progressbar" style="width: 100%" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
 
   </main>
   <footer class="container-fluid"></footer>
